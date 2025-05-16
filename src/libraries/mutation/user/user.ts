@@ -1,14 +1,14 @@
+import {
+	CheckOTPPayload,
+	RequestUnlockAccountPayload,
+	UnlockAccountPayload,
+	UpdateUserProfilePayload
+} from '@/libraries/schemas/user/user'
 import type { ReglaResponse } from '@/types/default'
 import type { ResendOTPPayload } from '@/types/user/user'
 import { routes } from '@/utilities/constants'
 import endpoints from '@/utilities/endpoints'
 import { post, put } from '@/utilities/mutation'
-import type {
-	CheckOTPPayload,
-	RequestUnlockAccountPayload,
-	UnlockAccountPayload,
-	UpdateUserProfilePayload
-} from '../../schemas/user/user'
 
 const RequestUnlockAccount = async (
 	payload: RequestUnlockAccountPayload

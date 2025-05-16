@@ -4,9 +4,9 @@ import { isEmpty } from 'lodash'
 import Link from 'next/link'
 import { useMemo } from 'react'
 import useGetCurrentId from '@/hooks/use-get-current-id'
-import type { GetPrivilegeData } from '@/types/user/security-role'
-import type { GetNavigationScreenData } from '../../types/user/common'
-import { GenerateIcon } from '../../utilities/helper'
+import { GetNavigationScreenData } from '@/types/user/common'
+import { GetPrivilegeData } from '@/types/user/security-role'
+import { GenerateIcon } from '@/utilities/helper'
 import Forbidden from './forbidden'
 
 type GridCardProps = {

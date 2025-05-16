@@ -31,7 +31,7 @@ import {
 	Text,
 	useDisclosure
 } from '@chakra-ui/react'
-import { Iconify, Tooltip } from '@regla/monorepo'
+import { ClosedTooltip, Iconify } from '@regla/monorepo'
 import { useMutation, useQuery } from '@tanstack/react-query'
 import { useDebounceFn, useSelections, useSetState } from 'ahooks'
 import { Case } from 'change-case-all'
@@ -360,7 +360,7 @@ const Toolbar: React.FC<ToolbarProps> = (props) => {
 
 	return (
 		<HStack>
-			<Tooltip content="Download" showArrow>
+			<ClosedTooltip content="Download" showArrow>
 				<IconButton
 					cursor={{ _disabled: 'not-allowed' }}
 					disabled={isEmpty(download)}
@@ -370,7 +370,7 @@ const Toolbar: React.FC<ToolbarProps> = (props) => {
 				>
 					<Iconify height="20" icon="bxs:download" />
 				</IconButton>
-			</Tooltip>
+			</ClosedTooltip>
 			<Menu.Root
 				closeOnSelect={false}
 				open={open}
@@ -434,7 +434,7 @@ const Toolbar: React.FC<ToolbarProps> = (props) => {
 					</Menu.Positioner>
 				</Portal>
 			</Menu.Root>
-			<Tooltip content="Custom View" showArrow>
+			<ClosedTooltip content="Custom View" showArrow>
 				<IconButton
 					cursor={{ _disabled: 'not-allowed' }}
 					disabled={isEmpty(custom)}
@@ -446,7 +446,7 @@ const Toolbar: React.FC<ToolbarProps> = (props) => {
 						<Iconify height="20" icon="fluent:data-usage-settings-24-regular" />
 					</Link>
 				</IconButton>
-			</Tooltip>
+			</ClosedTooltip>
 		</HStack>
 	)
 }
@@ -773,61 +773,61 @@ const List: React.FC<ListProps> = (props) => {
 								</ActionBar.SelectionTrigger>
 								<ActionBar.Separator />
 								<Show when={selected.length === 1}>
-									<Tooltip content="view" showArrow>
+									<ClosedTooltip content="view" showArrow>
 										<IconButton
 											variant="ghost"
 											onClick={() => props.handleButtonClick('VIEW', selected[0])}
 										>
 											<Iconify height="20" icon="bxs:show" />
 										</IconButton>
-									</Tooltip>
+									</ClosedTooltip>
 								</Show>
 								<Show when={selected.length === 1}>
-									<Tooltip content="update" showArrow>
+									<ClosedTooltip content="update" showArrow>
 										<IconButton
 											variant="ghost"
 											onClick={() => props.handleButtonClick('UPDATE', selected[0])}
 										>
 											<Iconify height="20" icon="bxs:edit-alt" />
 										</IconButton>
-									</Tooltip>
+									</ClosedTooltip>
 								</Show>
 								<Show when={lock}>
-									<Tooltip content="unlock" showArrow>
+									<ClosedTooltip content="unlock" showArrow>
 										<IconButton variant="ghost" onClick={() => props.handleButtonClick('LOCK')}>
 											<Iconify height="20" icon="bx:lock-open" />
 										</IconButton>
-									</Tooltip>
+									</ClosedTooltip>
 								</Show>
 								<Show when={deallocate}>
-									<Tooltip content="deallocate" showArrow>
+									<ClosedTooltip content="deallocate" showArrow>
 										<IconButton
 											variant="ghost"
 											onClick={() => props.handleButtonClick('DEALLOCATE')}
 										>
 											<Iconify height="20" icon="icon-park-solid:people-delete-one" />
 										</IconButton>
-									</Tooltip>
+									</ClosedTooltip>
 								</Show>
 								<Show when={deactivate}>
-									<Tooltip content="deactivate" showArrow>
+									<ClosedTooltip content="deactivate" showArrow>
 										<IconButton
 											variant="ghost"
 											onClick={() => props.handleButtonClick('DEACTIVATE')}
 										>
 											<Iconify height="20" icon="bxs:minus-circle" />
 										</IconButton>
-									</Tooltip>
+									</ClosedTooltip>
 								</Show>
 								<Show when={erase}>
-									<Tooltip content="delete" showArrow>
+									<ClosedTooltip content="delete" showArrow>
 										<IconButton
 											variant="ghost"
 											onClick={() => props.handleButtonClick('DELETE')}
 										>
 											<Iconify height="20" icon="bxs:trash" />
 										</IconButton>
-									</Tooltip>
+									</ClosedTooltip>
 								</Show>
 							</ActionBar.Content>
 						</ActionBar.Positioner>

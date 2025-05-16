@@ -1,5 +1,5 @@
 import { deleteCookie, getCookie, type OptionsType, setCookie } from 'cookies-next'
-import type { AuthenticateResponse } from '../types/user/common'
+import { AuthenticateResponse } from '@/types/user/common'
 import { cookies, routes } from './constants'
 
 const setCredential = async (credential: AuthenticateResponse) => {

@@ -4,7 +4,7 @@ import type { SpanProps, SwitchRootProps } from '@chakra-ui/react'
 import { Span, Switch } from '@chakra-ui/react'
 import { Iconify } from '@regla/monorepo'
 import { forwardRef } from 'react'
-import { useColorMode } from '../../hooks/use-color-mode'
+import { useColorMode } from '@/hooks/use-color-mode'
 
 export type ColorSwitchProps = Omit<SwitchRootProps, 'aria-label'>
 

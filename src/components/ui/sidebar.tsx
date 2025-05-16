@@ -9,7 +9,7 @@ import {
 	Show,
 	Text
 } from '@chakra-ui/react'
-import { Iconify, Tooltip } from '@regla/monorepo'
+import { ClosedTooltip, Iconify } from '@regla/monorepo'
 import { isEmpty } from 'lodash'
 import { useRouter } from 'next/navigation'
 import { useMemo } from 'react'
@@ -48,7 +48,7 @@ const SidebarContent = () => {
 			<For each={menu}>
 				{(item, index) => (
 					<Accordion.Item key={index} value={item.title}>
-						<Tooltip content={item.title} positioning={{ placement: 'right' }} showArrow>
+						<ClosedTooltip content={item.title} positioning={{ placement: 'right' }} showArrow>
 							<Accordion.ItemTrigger
 								_hover={{ bg: 'gray.subtle' }}
 								cursor="pointer"
@@ -64,13 +64,13 @@ const SidebarContent = () => {
 								</Text>
 								<Accordion.ItemIndicator hidden={!isSidebarOpen || isEmpty(item.items)} />
 							</Accordion.ItemTrigger>
-						</Tooltip>
+						</ClosedTooltip>
 						<Presence present={!isEmpty(item.items)}>
 							<Accordion.ItemContent>
 								<Accordion.ItemBody>
 									<For each={item.items}>
 										{(sub, id) => (
-											<Tooltip
+											<ClosedTooltip
 												key={id}
 												content={sub.title}
 												positioning={{ placement: 'right' }}
@@ -94,7 +94,7 @@ const SidebarContent = () => {
 														{sub.title}
 													</Text>
 												</Button>
-											</Tooltip>
+											</ClosedTooltip>
 										)}
 									</For>
 								</Accordion.ItemBody>

@@ -162,7 +162,8 @@ const Header = () => {
 	const handleProfileClick = ({ value }: MenuSelectionDetails) => {
 		switch (value) {
 			case 'main':
-				return redirect(routes.main)
+				location.href = routes.main
+				return
 			case 'profile':
 				return redirect('/' + appId + routes.exception.profile, RedirectType.push)
 			case 'logout':

@@ -1,13 +1,13 @@
 import { Mutex } from 'async-mutex'
 import axios, { type AxiosResponse, type InternalAxiosRequestConfig } from 'axios'
 import { isEmpty } from 'lodash'
+import useUserProperty from '@/stores/user-property'
 import type { ReglaResponse } from '@/types/default'
 import type { AuthenticateResponse } from '@/types/user/common'
+import { routes } from '@/utilities/constants'
+import { deleteCredential, getCredential, setCredential } from '@/utilities/credentials'
 import endpoints from '@/utilities/endpoints'
-import useUserProperty from '../stores/user-property'
-import { routes } from '../utilities/constants'
-import { deleteCredential, getCredential, setCredential } from '../utilities/credentials'
-import toast from '../utilities/toast'
+import toast from '@/utilities/toast'
 
 const mutex = new Mutex()
 

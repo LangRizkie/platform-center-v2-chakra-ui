@@ -22,7 +22,7 @@ import { GetPathUrlScreen } from '@/libraries/mutation/user/screen'
 import { GetPrivilege } from '@/libraries/mutation/user/security-role'
 import useStaticStore from '@/stores/button-static'
 import usePreference from '@/stores/preference'
-import type { LayoutType } from '../../types/default'
+import { LayoutType } from '@/types/default'
 
 const SidebarLayout: React.FC<LayoutType> = ({ children, modal }) => {
 	const pathname = useLocationPathname()
